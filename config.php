@@ -128,7 +128,8 @@ $CONFIG = array(
     'langAvailable' => ['ru', 'en', 'ua'],
 
     // Full path to the langs directory
-    'langPath' => __DIR__ . '/langs/',
+    // Only use this to override default lang files!
+    //'langPath' => __DIR__ . '/langs/',
 
     // Language auto-detection [ true / false ]
     // This option may no effect if you set a language by $_GET variable.
