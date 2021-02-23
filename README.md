@@ -1,8 +1,13 @@
-﻿# inWidget - free Instagram widget for your website
+﻿# inWidget Proxified - free Instagram widget for your website
 
-This library is based on PHP and allows you to show photos from an Instagram account on your website.
+This library is based on PHP and allows you to show photos from an Instagram account or hashtag on your website.
 
-[Demonstration >>](https://inwidget.ru/en/demo.php)
+## This is a proxified fork of archived project https://github.com/aik27/inwidget , and this fork tries to solve the main issue of parent repo - access to Instagram APIs from datacenters.
+This fork uses RapidAPI solution under the hood (which works much better than just using residential proxies), this requires subscription but Free plan is more than enough for 1 widget. It does not require your instagram login or password anymore!
+Get your subscription key here: https://rapidapi.com/restyler/api/instagram40 and put to it config.php
+
+
+[Demonstration >>](https://inwidget.apiroad.net/)
 
 ![demo](https://inwidget.ru/i/demo_en_2.jpg)
 
@@ -29,17 +34,17 @@ PHP >= 5.4.0 with cURL extension
 
 ### 1. Upload source code to the root folder of your website
 
-[Download](https://github.com/aik27/inwidget/releases) source code. Extract /inwidget folder.
+[Download](https://github.com/restyler/inwidget/releases) source code. Extract /inwidget folder.
 Upload /inwidget folder to website with all files inside.
 
 Or use composer
 
 ```sh
-composer.phar require aik27/inwidget
+composer.phar require restyler/inwidget
 ```
 
 ```sh
-composer require aik27/inwidget
+composer require restyler/inwidget
 ```
 
 **Note**. inWidget using relative paths, so you can upload it to any folder. After that do not forget change URL in IFRAME tag.
@@ -58,8 +63,8 @@ List of parameters:
 
 + **LOGIN** - Instagram login
 + **HASHTAG** - hashtags separated by a comma (for example: girl, man). Selection will be made from around the world in the order that photos were marked with desired tags
-+ **ACCESS_TOKEN** - a hashkey granted to you by an Instagram app. This option is NOT required. If you use it, the widget will start sending requests through the official endpoints API (https://www.instagram.com/developer/). In this case, the widget will have only those rights and limits that the application itself possesses. For more information about, please, use this link: https://inwidget.ru/#token
-+ **authLogin and authPassword** - login and password of an account for authorization. This options are NOT required. Authorization is necessary for alternative methods of obtaining data and provides more stability when you using the undocumented API. I advise you to create a separate account for this with disabled two-step authentication. Authorization data is not transferred to third parties and author of the widget
++ **ACCESS_TOKEN** - **DEPRECATED, do not use this in 2021!** a hashkey granted to you by an Instagram app. 
++ **authLogin and authPassword** - **DEPRECATED, do not use this in 2021!** login and password of an account for authorization. This options are NOT required. Authorization is necessary for alternative methods of obtaining data and provides more stability when you using the undocumented API. I advise you to create a separate account for this with disabled two-step authentication. Authorization data is not transferred to third parties and author of the widget
 + **loginAvailable** - If you need to separate logins on diffent website pages, just add possible logins to the array below. After that you can send login to the widget by GET variable. It workds only with the undocumented API. Example: /inwidget/index.php?login=fotokto_ru
 + **tagsAvailable** - Same option for tagged media. Add possible tags to the array below. Then you can use GET variable for tags. Example: /inwidget/index.php?tag=photography. You can mix this option with "loginAvailable" and "tagsFromAccountOnly"
 + **tagsBannedLogins** - Specify here list of banned logins. Photos of these users will not be display in the widget. Separate usernames by a comma. For example: mark18, kitty45
