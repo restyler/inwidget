@@ -140,24 +140,6 @@ The value must be set to true. After that, the widget will automatically adjust 
 
 Please, see demonstration of adaptive mode: https://inwidget.ru/adaptive.php
 
-## Video instruction how to get ACCESS TOKEN
-
-https://www.youtube.com/watch?v=_O669Dx3djw
-
-The URL to generate ACCESS TOKEN:
-
-```
-https://www.instagram.com/oauth/authorize/?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=token&scope=basic
-```
-
-The widget can work with two kinds of API (undocumented and endpoints). Default API is undocumented. Access token is not required for it. Specifying ACCESS TOKEN in the widget's settings takes it to Endpoints API mode (https://www.instagram.com/developer/). If you want to create your own application in Instagram, then use video instruction above. Keep in mind that your application will first get into "sandbox" with following limits:
-
-+ **20** - maximum number of photos that can be obtained per one request.
-+ **500** - maximum number of requests per hour.
-+ ***And most importantly*** - photos can be obtained from your account only. Same goes for selection by tags.
-
-**Keep in mind that Instagram has announced the end of support for endpoint API by 2020**.
-More information: https://developers.facebook.com/blog/post/2018/01/30/instagram-graph-api-updates/
 
 ## For developers
 
