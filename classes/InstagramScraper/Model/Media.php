@@ -196,7 +196,7 @@ class Media extends AbstractModel
         while ($id > 0) {
             $remainder = $id % 64;
             $id = ($id - $remainder) / 64;
-            $code = $alphabet{$remainder} . $code;
+            $code = $alphabet[$remainder] . $code;
         };
         return $code;
     }
