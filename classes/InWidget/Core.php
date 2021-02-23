@@ -290,7 +290,7 @@ class Core
             throw new \Exception(__CLASS__ . ': default skin does not present in "skinAvailable" config property');
         }
         // prepare paths
-        $this->langPath = __DIR__ . '/' . $this->langPath; // PHP < 5.6 fix
+        $this->langPath = __DIR__ . '/../../' . $this->langPath; 
         $this->cachePath = __DIR__ . '/' . $this->cachePath; // PHP < 5.6 fix
         // prepare login
         if ($this->skipGET === false) {
