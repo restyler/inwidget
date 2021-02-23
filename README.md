@@ -38,21 +38,33 @@ PHP >= 5.4.0 with cURL extension
 Upload /inwidget folder to website with all files inside.
 
 Or use composer
-
-```sh
-composer.phar require restyler/inwidget
-```
-
 ```sh
 composer require restyler/inwidget
+cp vendor/restyler/inwidget/config.php config.php # copy sample config to your project root folder
 ```
 
-**Note**. inWidget using relative paths, so you can upload it to any folder. After that do not forget change URL in IFRAME tag.
+**In case you install via composer, you need also to create controller file in your project root folder:**
+Call it 'index.php' or 'widget.php' - just don't forget to use this name in the IFRAME tag.
+The contents of the controller file should be:
+```
+<?php
 
-### 2. Set write permissions to the folder: /inwidget/cache
+include 'vendor/restyler/inwidget/index.php';
+```
 
-inWidget will store cached data in /inwidget/cache folder.
+If you have downloaded the package to local folder of the project, e.g. to inwidget folder, you can just call the script directly from your IFRAME tag:  `/inwidget/index.php?toolbar=...`
+
+**Note**. inWidget uses relative paths, so you can upload it to any folder. After that do not forget change URL in IFRAME tag.
+
+### 2. Set write permissions to the cache folder 
+
+inWidget stores cached data in /inwidget/cache folder (if you downloaded the repo and extracted it to /inwidget) or /cache if you installed via composer.
 If this directory does not have write permissions you will see ERROR #101.
+In case you are using Apache:
+```sh
+chown www-data cache
+```
+
 
 ### 3. Configuration
 
