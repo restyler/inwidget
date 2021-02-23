@@ -1,6 +1,6 @@
 ﻿# inWidget Proxified - free Instagram widget for your website
 
-This library is based on PHP and allows you to show photos from an Instagram account or hashtag on your website.
+This library is based on PHP and allows you to show photos from an Instagram account or hashtag on your website, without Instagram Developer account or Instagram API access.
 
 ## This is a proxified fork of archived project https://github.com/aik27/inwidget , and this fork tries to solve the main issue of parent repo - access to Instagram APIs from datacenters.
 This fork uses RapidAPI solution under the hood (which works much better than just using residential proxies), this requires subscription but Free plan is more than enough for 1 widget. It does not require your instagram login or password anymore!
