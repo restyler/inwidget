@@ -235,20 +235,10 @@ Please, see what exactly was written into the cached file. This error is generat
 
 ## Feedback, questions and suggestions
 
-+ Visit website: https://inwidget.ru
-+ Write to: aik@inwidget.ru 
-+ Join to development on GitHub: https://github.com/aik27/inwidget
-+ Article about inWidget on Habrahabr: http://habrahabr.ru/post/223739/
++ Visit website: https://inwidget.apiroad.net
 
-## Donate
 
-inWidget is a non-profit library that exists on bare enthusiasm. Your support are welcome!
-
-PayPal: aik@inwidget.ru
-
-Thank you!
-
-## Copyrights
+## Copyrights of original repo 
 
 + Author: Alexandr Kazarmshchikov
 + E-mail: aik@inwidget.ru
