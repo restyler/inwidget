@@ -81,6 +81,7 @@ class Core
                 $this->api = ApiModel::getInstance('official');
             } else {
                 $this->api = ApiModel::getInstance('', $config['authLogin'], $config['authPassword']);
+                $this->api->setRapidApiKey($this->config['RAPIDAPI_KEY']);
             }
         } catch (\Exception $e) {
             throw new InWidgetException($e->getMessage(), 500, $this->getCacheFilePath());

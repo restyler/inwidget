@@ -43,6 +43,8 @@ class Instagram
     ];
     public static $debug = false;
     public static $version = 'v0.8.17'; // source version with inWidget modifications
+    private $rapidApiKey = null;
+
     /**
      * @param string $username
      * @param string $password
@@ -232,11 +234,19 @@ class Instagram
             ];
         }
 
+        if ($this->getRapidApiKey()) {
+            $headers['x-rapidapi-key'] = $this->getRapidApiKey();
+        }
+
         if ($this->getUserAgent()) {
             $headers['user-agent'] = $this->getUserAgent();
             if (!is_null($gisToken)) {
             	$headers['x-instagram-gis'] = $gisToken;
             }
+        }
+
+        if (empty($headers['x-csrftoken'])) {
+            $headers['x-csrftoken'] = md5(uniqid()); // this can be whatever, insta doesn't like an empty value
         }
 
         return $headers;
@@ -259,6 +269,25 @@ class Instagram
     public function setUserAgent($userAgent)
     {
         return $this->userAgent = $userAgent;
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function getRapidApiKey()
+    {
+        return $this->rapidApiKey;
+    }
+
+    /**
+     * @param $key
+     *
+     * @return string
+     */
+    public function setRapidApiKey($key)
+    {
+        return $this->rapidApiKey = $key;
     }
 
     /**
@@ -477,16 +506,15 @@ class Instagram
      */
     public function getAccount($username)
     {
-    	$account = Instagram::topSearch($username, 'user');
+    	/*$account = Instagram::topSearch($username, 'user');
     	$statistic = Instagram::getAccountStatistic($account['id']);
     	
     	$account['followsCount'] = $statistic['follows'];
     	$account['followedByCount'] = $statistic['followedBy'];
     	$account['mediaCount'] = $statistic['medias'];
 
-    	return Account::create($account);
+    	return Account::create($account);*/
 
-    	/*
         $response = Request::get(Endpoints::getAccountPageLink($username), $this->generateHeaders($this->userSession));
         if (static::HTTP_NOT_FOUND === $response->code) {
             throw new InstagramNotFoundException('Account with given username does not exist.');
@@ -503,7 +531,7 @@ class Instagram
         }
         $this->rhxGis = $userArray['rhx_gis'];
         return Account::create($userArray['entry_data']['ProfilePage'][0]['graphql']['user']);
-        */
+        
     	
     }
     private function getSharedDataFromPage($url = Endpoints::BASE_URL)

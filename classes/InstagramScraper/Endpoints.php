@@ -45,6 +45,12 @@ class Endpoints
     const GRAPH_QL_QUERY_URL = 'https://www.instagram.com/graphql/query/?query_id={{queryId}}'; // storis
 
     private static $requestMediaCount = 30;
+    const RAPIDAPI_PROXY_URL = 'https://instagram40.p.rapidapi.com';
+
+    public static function proxifyLink($url)
+    {
+        return static::RAPIDAPI_PROXY_URL . '/proxy?' . http_build_query(['url' => $url]); 
+    }
 
     /**
      * @param int $count
@@ -56,28 +62,28 @@ class Endpoints
 
     public static function getAccountPageLink($username)
     {
-        return str_replace('{username}', urlencode($username), static::ACCOUNT_PAGE);
+        return self::proxifyLink(str_replace('{username}', urlencode($username), static::ACCOUNT_PAGE));
     }
 
     public static function getAccountJsonLink($username)
     {
-        return str_replace('{username}', urlencode($username), static::ACCOUNT_JSON_INFO);
+        return self::proxifyLink(str_replace('{username}', urlencode($username), static::ACCOUNT_JSON_INFO));
     }
 
     public static function getAccountJsonInfoLinkByAccountId($id)
     {
-        return str_replace('{userId}', urlencode($id), static::ACCOUNT_JSON_INFO_BY_ID);
+        return self::proxifyLink(str_replace('{userId}', urlencode($id), static::ACCOUNT_JSON_INFO_BY_ID));
     }
 
     public static function getAccountMediasJsonLink($userId, $maxId = '')
     {
     	$url = str_replace('{user_id}', urlencode($userId), static::ACCOUNT_MEDIAS);
         $url = str_replace('{count}', static::$requestMediaCount, $url);
-    	return str_replace('{max_id}', urlencode($maxId), $url);
+    	return self::proxifyLink(str_replace('{max_id}', urlencode($maxId), $url));
     }
     public static function getAccountMediasJsonLinkByHash($variables)
     {
-    	return str_replace('{variables}', urlencode($variables), static::ACCOUNT_MEDIAS_BY_HASH);
+    	return self::proxifyLink(str_replace('{variables}', urlencode($variables), static::ACCOUNT_MEDIAS_BY_HASH));
     }
 
     public static function getMediaPageLink($code)
@@ -93,47 +99,47 @@ class Endpoints
     public static function getMediasJsonByLocationIdLink($facebookLocationId, $maxId = '')
     {
         $url = str_replace('{{facebookLocationId}}', urlencode($facebookLocationId), static::MEDIA_JSON_BY_LOCATION_ID);
-        return str_replace('{{maxId}}', urlencode($maxId), $url);
+        return self::proxifyLink(str_replace('{{maxId}}', urlencode($maxId), $url));
     }
 
     public static function getMediasJsonByTagLink($tag, $maxId = '')
     {
         $url = str_replace('{tag}', urlencode($tag), static::MEDIA_JSON_BY_TAG);
-        return str_replace('{max_id}', urlencode($maxId), $url);
+        return self::proxifyLink(str_replace('{max_id}', urlencode($maxId), $url));
     }
     
     public static function getMediasJsonByTagLinkByHash($variables)
     {
-    	return str_replace('{variables}', urlencode($variables), static::MEDIA_JSON_BY_TAG_BY_HASH);
+    	return self::proxifyLink(str_replace('{variables}', urlencode($variables), static::MEDIA_JSON_BY_TAG_BY_HASH));
     }
     
     public static function getMediasJsonByTagLinkByQuery($tag, $count, $maxId = '')
     {
     	$url = str_replace('{tag}', urlencode($tag), static::MEDIA_JSON_BY_TAG_BY_QUERY);
     	$url = str_replace('{count}', static::$requestMediaCount, $url);
-    	return str_replace('{max_id}', urlencode($maxId), $url);
+    	return self::proxifyLink(str_replace('{max_id}', urlencode($maxId), $url));
     }
     
     public static function getMediasJsonByTagLinkByParser($tag)
     {
-    	return str_replace('{tag}', urlencode($tag), static::MEDIA_JSON_BY_TAG_BY_PARSER);
+    	return self::proxifyLink(str_replace('{tag}', urlencode($tag), static::MEDIA_JSON_BY_TAG_BY_PARSER));
     }
     
     public static function getGeneralSearchJsonLink($query)
     {
-        return str_replace('{query}', urlencode($query), static::GENERAL_SEARCH);
+        return self::proxifyLink(str_replace('{query}', urlencode($query), static::GENERAL_SEARCH));
     }
     
     public static function getCommentsBeforeCommentIdByCode($code, $count, $commentId)
     {
         $url = str_replace('{{shortcode}}', urlencode($code), static::COMMENTS_BEFORE_COMMENT_ID_BY_CODE);
         $url = str_replace('{{count}}', urlencode($count), $url);
-        return str_replace('{{commentId}}', urlencode($commentId), $url);
+        return self::proxifyLink(str_replace('{{commentId}}', urlencode($commentId), $url));
     }
 
     public static function getLastLikesByCodeLink($code)
     {
-        $url = str_replace('{{code}}', urlencode($code), static::LAST_LIKES_BY_CODE);
+        $url = self::proxifyLink(str_replace('{{code}}', urlencode($code), static::LAST_LIKES_BY_CODE));
         return $url;
     }
 
@@ -143,7 +149,7 @@ class Endpoints
         $url = str_replace('{{count}}', urlencode($count), $url);
         $url = str_replace('{{likeId}}', urlencode($lastLikeID), $url);
 
-        return $url;
+        return self::proxifyLink($url);
     }
 
     public static function getGraphQlUrl($queryId, $parameters)

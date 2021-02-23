@@ -31,6 +31,10 @@ class ApiScraper extends ApiModel
         }
     }
 
+    public function setRapidApiKey($key) {
+        $this->api->setRapidApiKey($key);
+    }
+
     /**
      * Get account data by login
      *

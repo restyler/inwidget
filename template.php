@@ -128,7 +128,7 @@ if (!$inWidget instanceof \InWidget\Core) {
     ?>
 </div>
 <div class='copyright'>
-    &copy; <a href='https://inwidget.ru' target='_blank' title='Free Instagram widget for your website!'>inwidget.ru</a>
+    Powered by <a href='https://inwidget.apiroad.net/' target='_blank' title='Free Instagram widget for your website!'>inwidget.apiroad.net</a>
 </div>
 <?php if (isset($inWidget->data->isBackup)) : ?>
     <div class='cacheError'>
@@ -142,6 +142,7 @@ if (!$inWidget instanceof \InWidget\Core) {
 </html>
 <!-- 
     inWidget - free Instagram widget for your site!
-    https://inwidget.ru
+    https://inwidget.apiroad.net , proxified fork of https://inwidget.ru
     © Alexandr Kazarmshchikov
+    © restyler
 -->
