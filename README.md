@@ -63,6 +63,7 @@ List of parameters:
 
 + **LOGIN** - Instagram login
 + **HASHTAG** - hashtags separated by a comma (for example: girl, man). Selection will be made from around the world in the order that photos were marked with desired tags
++ **RAPIDAPI_KEY** - RapidAPI key, required. Retrieve your key on https://rapidapi.com/restyler/api/instagram40 (Free plan should be more than enough for responsible use with 12h cache)
 + **ACCESS_TOKEN** - **DEPRECATED, do not use this in 2021!** a hashkey granted to you by an Instagram app. 
 + **authLogin and authPassword** - **DEPRECATED, do not use this in 2021!** login and password of an account for authorization. This options are NOT required. Authorization is necessary for alternative methods of obtaining data and provides more stability when you using the undocumented API. I advise you to create a separate account for this with disabled two-step authentication. Authorization data is not transferred to third parties and author of the widget
 + **loginAvailable** - If you need to separate logins on diffent website pages, just add possible logins to the array below. After that you can send login to the widget by GET variable. It workds only with the undocumented API. Example: /inwidget/index.php?login=fotokto_ru
