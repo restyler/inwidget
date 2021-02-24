@@ -9,7 +9,7 @@ Get your subscription key here: https://rapidapi.com/restyler/api/instagram40 an
 
 [Demonstration >>](https://inwidget.apiroad.net/)
 
-![demo](https://inwidget.apiroad.net/img1.png)
+![demo](https://inwidget.apiroad.net/img1.png?1)
 
 ### Features:
 
