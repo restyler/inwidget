@@ -22,9 +22,6 @@ img {
 .widget {
 	border:1px solid #666;
 	background:#f9f9f9;
-	border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
-	-moz-border-radius: 5px 5px 5px 5px;
 	overflow:hidden;
 }
 	.widget a.title:link, .widget a.title:visited  {
@@ -102,8 +99,6 @@ img {
 		padding:5px 5px 5px 10px;
 		
 		border-radius: 5px 5px 5px 5px;
-		-webkit-border-radius: 5px 5px 5px 5px;
-		-moz-border-radius: 5px 5px 5px 5px;
 		
 	}
 	.widget a.follow:hover {

@@ -27,7 +27,17 @@ if (!$inWidget instanceof \InWidget\Core) {
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta http-equiv="content-language" content="<?= $inWidget->langName ?>"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <link rel="stylesheet" type="text/css" href="<?= $inWidget->skinPath . $inWidget->skinName ?>.css?r6" media="all"/>
+    <link rel="stylesheet" type="text/css" href="<?= $inWidget->skinPath . $inWidget->skinName ?>.css?r7" media="all"/>
+    <?php if ($inWidget->color): ?>
+        <style type='text/css'>
+        .widget {
+            border-color: #<?= $inWidget->color ?> !important;
+        }
+        .widget a.title:link, .widget a.title:visited {
+            background-color: #<?= $inWidget->color ?> !important;
+        }
+        </style>
+    <?php endif; ?>
     <?php if ($inWidget->adaptive === false) : ?>
         <style type='text/css'>
             .widget {

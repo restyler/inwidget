@@ -34,6 +34,7 @@ class Core
     public $toolbar = true;
     public $adaptive = false;
     public $preview = 'large';
+    public $color = null;
     public $imgWidth = 0;
     public $skipGET = false;
     public $loginAvailable = [];
@@ -427,6 +428,10 @@ class Core
             if (isset($_GET['toolbar']) and $_GET['toolbar'] == 'false' or !empty($this->config['HASHTAG'])) {
                 $this->toolbar = false;
             }
+            if (isset($_GET['color']) && preg_match('/^(?:[0-9a-fA-F]{3}){1,2}$/', $_GET['color'])) {
+                $this->color = $_GET['color'];
+            }
+
             if (isset($_GET['adaptive']) and $_GET['adaptive'] == 'true') {
                 $this->adaptive = true;
             }

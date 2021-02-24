@@ -127,8 +127,9 @@ Parameters are passed as GET variables when accessing to the widget script. For 
 /inwidget/index.php?width=600&inline=5
 ```
 
-List of parameters:
+List of GET parameters:
 
++ **color** - primary color of the widget, in hex format, without '#' symbol, e.g. `3423c1`
 + **width** -  the widget width (default: 260px)
 + **inline** - number of photos per line (default: 4 pcs.)
 + **view** - how many photos can be displayed in the widget (default: 12 pcs, max.: 30 pcs, you can change it in config.php)
