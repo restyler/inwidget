@@ -79,7 +79,7 @@ img {
 				}
 			.widget .profile .value {
 				width:33%;
-				height:32px;
+				height:44px;
 				font-size:14px;
 				font-weight:bold;
 			}
@@ -98,7 +98,7 @@ img {
 		color:#FFF;
 		font-weight:bold;
 		width:120px;
-		margin:0 auto 0 auto;
+		margin:-10px auto 0 auto;
 		padding:5px 5px 5px 10px;
 		
 		border-radius: 5px 5px 5px 5px;

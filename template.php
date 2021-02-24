@@ -27,7 +27,7 @@ if (!$inWidget instanceof \InWidget\Core) {
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta http-equiv="content-language" content="<?= $inWidget->langName ?>"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <link rel="stylesheet" type="text/css" href="<?= $inWidget->skinPath . $inWidget->skinName ?>.css?r5" media="all"/>
+    <link rel="stylesheet" type="text/css" href="<?= $inWidget->skinPath . $inWidget->skinName ?>.css?r6" media="all"/>
     <?php if ($inWidget->adaptive === false) : ?>
         <style type='text/css'>
             .widget {
