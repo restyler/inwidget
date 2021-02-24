@@ -24,5 +24,5 @@ $LANG = array(
     'imgEmpty'          => 'user doesn\'t have any photos yet',
     'imgEmptyByHash'    => 'photos by tag <b>#{$hashtag}</b> not found',
     'errorCache'        => 'Update cache error. Something went wrong.<br />Using version from',
-    'updateNeeded'      => 'Please, update widget to last version from <a href="https://inwidget.ru/" target="_blank">inwidget.ru</a>',
+    'updateNeeded'      => 'Please, update widget to last version from <a href="https://inwidget.apiroad.net/" target="_blank">inwidget.apiroad.net</a>',
 );

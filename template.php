@@ -27,7 +27,7 @@ if (!$inWidget instanceof \InWidget\Core) {
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta http-equiv="content-language" content="<?= $inWidget->langName ?>"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <link rel="stylesheet" type="text/css" href="<?= $inWidget->skinPath . $inWidget->skinName ?>.css?r2" media="all"/>
+    <link rel="stylesheet" type="text/css" href="<?= $inWidget->skinPath . $inWidget->skinName ?>.css?r5" media="all"/>
     <?php if ($inWidget->adaptive === false) : ?>
         <style type='text/css'>
             .widget {
@@ -65,15 +65,15 @@ if (!$inWidget instanceof \InWidget\Core) {
                     <a href="https://instagram.com/<?= $inWidget->data->username ?>" target="_blank"><img src="<?= $inWidget->data->avatar ?>"></a>
                 </td>
                 <td class="value">
-                    <?= $inWidget->data->posts; ?>
+                    <?= $inWidget->humanNumber($inWidget->data->posts); ?>
                     <span><?= $inWidget->lang['statPosts'] ?></span>
                 </td>
                 <td class="value">
-                    <?= $inWidget->data->followers ?>
+                    <?= $inWidget->humanNumber($inWidget->data->followers) ?>
                     <span><?= $inWidget->lang['statFollowers'] ?></span>
                 </td>
                 <td class="value" style="border-right:none !important;">
-                    <?= $inWidget->data->following ?>
+                    <?= $inWidget->humanNumber($inWidget->data->following) ?>
                     <span><?= $inWidget->lang['statFollowing'] ?></span>
                 </td>
             </tr>

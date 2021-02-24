@@ -24,5 +24,5 @@ $LANG = array(
     'imgEmpty'          => 'у пользователя нет фотографии',
     'imgEmptyByHash'    => 'фотографии по тегу <b>#{$hashtag}</b> не найдены ',
     'errorCache'        => 'Ошибка обновления кэша.<br />Используется версия от',
-    'updateNeeded'      => 'Обновите виджет до последней версии с сайта <a href="https://inwidget.ru/" target="_blank">inwidget.ru</a>',
+    'updateNeeded'      => 'Обновите виджет до последней версии с сайта <a href="https://inwidget.apiroad.net/" target="_blank">inwidget.apiroad.net</a>',
 );
