@@ -11,7 +11,8 @@ https://github.com/restyler/inwidget/commit/2e4986ccde87c47e10b78df04e82c366d105
 
 ----------
 
-# If you need commercial support and custom development for the widget, please contact http://t.me/sergeyvvv5
+# Commercial support and custom development
+Please contact http://t.me/sergeyvvv5
 
 ----------
 
