@@ -8,6 +8,11 @@ https://github.com/restyler/inwidget/commit/2e4986ccde87c47e10b78df04e82c366d105
 
 (consider switching to nginx/cloudflare proxying for better performance and cache support)
 
+
+----------
+
+# If you need commercial support and custom development for the widget, please contact http://t.me/sergeyvvv5
+
 ----------
 
 
