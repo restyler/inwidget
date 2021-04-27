@@ -9,7 +9,7 @@ Get your subscription key here: https://rapidapi.com/restyler/api/instagram40 an
 
 [Demonstration >>](https://inwidget.apiroad.net/)
 
-![demo](https://inwidget.apiroad.net/img1.png?1)
+![demo](https://inwidget.apiroad.net/img2.png?1)
 
 ### Features:
 
@@ -104,7 +104,7 @@ Or use another examples with different display type:
 
 ```
 <!-- Without profile -->
-<iframe src='/inwidget/index.php?toolbar=false' data-inwidget scrolling='no' frameborder='no' style='border:none;width:260px;height:320px;overflow:hidden;'></iframe>
+<iframe src='/inwidget/index.php?toolbar=false&color=3423c1' data-inwidget scrolling='no' frameborder='no' style='border:none;width:260px;height:320px;overflow:hidden;'></iframe>
 
 <!-- Mini 1 -->
 <iframe src='/inwidget/index.php?width=100&inline=2&view=12&toolbar=false' data-inwidget scrolling='no' frameborder='no' style='border:none;width:100px;height:320px;overflow:hidden;'></iframe>
