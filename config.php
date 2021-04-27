@@ -9,6 +9,13 @@ $CONFIG = array(
     // Main settings
     // -------------------------------------------------------------
 
+    // starting in Apr 2021 Instagram now restricts images from being opened directly on your website domain.
+    // https://stackoverflow.com/a/67257278/15404876
+    // Chrome respects cross-origin-policy: same-origin header that cdninstagram sends along with the image
+    // to mitigate this, the widget can proxy images via server-side. Default proxy is php which is not very effective, and there is no caching implemented yet.
+    // Consider switching to nginx/cloudflare proxying is possible. 
+    'proxyRewriteUrl' => 'imgproxy.php?url={URL}',
+
     // Primary Instagram login
     'LOGIN' => 'cristiano',
 

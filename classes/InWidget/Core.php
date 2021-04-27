@@ -154,6 +154,15 @@ class Core
         }
     }
 
+    public function rewriteImgUrl($url) {
+        if (!empty($this->config['proxyRewriteUrl'])) {
+            $urlNew = str_replace('{URL}', urlencode($url), $this->config['proxyRewriteUrl']);
+            $url = str_replace('{URL_RAW}', $url, $urlNew);
+        }
+
+        return $url;
+    }
+
     /**
      * Get data from Instagram (or actual cache)
      *

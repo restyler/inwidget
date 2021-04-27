@@ -72,7 +72,7 @@ if (!$inWidget instanceof \InWidget\Core) {
         <table class="profile">
             <tr>
                 <td rowspan="2" class="avatar">
-                    <a href="https://instagram.com/<?= $inWidget->data->username ?>" target="_blank"><img src="<?= $inWidget->data->avatar ?>"></a>
+                    <a href="https://instagram.com/<?= $inWidget->data->username ?>" target="_blank"><img src="<?= $inWidget->rewriteImgUrl($inWidget->data->avatar) ?>"></a>
                 </td>
                 <td class="value">
                     <?= $inWidget->humanNumber($inWidget->data->posts); ?>
@@ -115,6 +115,9 @@ if (!$inWidget instanceof \InWidget\Core) {
                 default:
                     $thumbnail = $item->small;
             }
+
+            $thumbnail = $inWidget->rewriteImgUrl($thumbnail);
+
             echo '<a href="' . $item->link . '" class="image" target="_blank"><span style="background-image:url(' . $thumbnail . ');">&nbsp;</span></a>';
             $i++;
             if ($i >= $inWidget->view) {
