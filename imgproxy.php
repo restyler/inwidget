@@ -3,7 +3,6 @@ function ends_with( $haystack, $needle ) {
     return substr($haystack, -strlen($needle))===$needle;
 }
 
-$start = microtime(true);
 $url = isset($_GET['url']) ? $_GET['url'] : null;
 
 
