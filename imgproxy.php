@@ -2,7 +2,7 @@
 
 $url = isset($_GET['url']) ? $_GET['url'] : null;
 
-if (!$url || substr($url, 0, 4) != 'http' || (strpos($url, 'cdninstagram.com') === FALSE &&  strpos($url, 'fbcdn.net') === FALSE)) {
+if (!$url || substr($url, 0, 4) != 'http' || (strpos($url, 'cdninstagram.com') === FALSE && strpos($url, 'fbcdn.net') === FALSE)) {
     die('Please, provide correct URL');
 }
 
