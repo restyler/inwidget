@@ -1,16 +1,21 @@
 <?php
+function ends_with( $haystack, $needle ) {
+    return substr($haystack, -strlen($needle))===$needle;
+}
 
+$start = microtime(true);
 $url = isset($_GET['url']) ? $_GET['url'] : null;
 
-if (!$url || substr($url, 0, 4) != 'http' || (strpos($url, 'cdninstagram.com') === FALSE &&  strpos($url, 'fbcdn.net') === FALSE)) {
+if (!$url || substr($url, 0, 4) != 'http') {
     die('Please, provide correct URL');
 }
 
-$imgInfo = getimagesize( $url );
+$parsed = parse_url($url);
 
-if (stripos($imgInfo['mime'], 'image/') === false) {
-    die('Invalid image file');
+if ((!ends_with($parsed['host'], 'cdninstagram.com') && !ends_with($parsed['host'], 'fbcdn.net')) || !ends_with($parsed['path'], 'jpg')) {
+    die('Please, provide correct URL');
 }
 
-header("Content-type: ".$imgInfo['mime']);
+// instagram only has jpeg images for now..
+header("Content-type: image/jpeg");
 readfile( $url );
