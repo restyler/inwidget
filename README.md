@@ -1,5 +1,22 @@
 ﻿# inWidget Proxified - free Instagram widget for your website
 
+
+# net::ERR_BLOCKED_BY_RESPONSE issue (new in 2021)
+Instagram has just updated cross-origin policy on their images, so web browsers now throw ERR_BLOCKED_BY_RESPONSE in console and refuse to display the images.
+To mitigate this, the inwidget has been updated to proxy images via simple image proxy.
+https://github.com/restyler/inwidget/commit/2e4986ccde87c47e10b78df04e82c366d1055633
+
+(consider switching to nginx/cloudflare proxying for better performance and cache support)
+
+
+----------
+
+# Commercial support and custom development
+Please contact http://t.me/sergeyvvv5
+
+----------
+
+
 This library is based on PHP and allows you to show photos from an Instagram account or hashtag on your website, without Instagram Developer account or Instagram API access. This fork also does not require your Instagram login and password.
 
 ## This is a proxified fork of an archived project https://github.com/aik27/inwidget , and this fork tries to solve the main issue of the parent project - reliable access to Instagram from datacenter ip ranges, without getting banned with 429 and 302 errors (e.g. see  https://github.com/aik27/inwidget/issues/29 ).
