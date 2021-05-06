@@ -6,6 +6,7 @@ function ends_with( $haystack, $needle ) {
 $start = microtime(true);
 $url = isset($_GET['url']) ? $_GET['url'] : null;
 
+
 if (!$url || substr($url, 0, 4) != 'http') {
     die('Please, provide correct URL');
 }
@@ -19,3 +20,4 @@ if ((!ends_with($parsed['host'], 'cdninstagram.com') && !ends_with($parsed['host
 // instagram only has jpeg images for now..
 header("Content-type: image/jpeg");
 readfile( $url );
+
